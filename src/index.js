@@ -101,6 +101,6 @@ createSchemas()
     });
   })
   .catch((err) => {
-    consola.err(err);
+    consola.error(err);
     return knex.destroy();
   });
