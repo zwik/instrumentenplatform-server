@@ -8,19 +8,22 @@
     "lint": "eslint src"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "Marcel van den Bosch",
+    "email": "m.v.d.bosch@gmail.com"
+  },
+  "license": "MIT",
   "dependencies": {
     "apollo-server": "^2.19.2",
-    "consola": "^2.15.0",
-    "graphql": "^15.4.0",
-    "knex": "^0.21.16",
+    "consola": "^2.15.2",
+    "graphql": "^15.5.0",
+    "knex": "^0.21.17",
     "mysql": "^2.18.1",
-    "objection": "^2.2.7",
+    "objection": "^2.2.14",
     "sqlite3": "^5.0.1"
   },
   "devDependencies": {
-    "eslint": "^7.18.0",
+    "eslint": "^7.19.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
     "nodemon": "^2.0.7"

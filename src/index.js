@@ -1,7 +1,10 @@
 const { Model } = require('objection');
 const Knex = require('knex');
-const { ApolloServer, gql } = require('apollo-server');
+const { ApolloServer } = require('apollo-server');
 const consola = require('consola');
+
+const typeDefs = require('./schema');
+const resolvers = require('./resolvers');
 
 const Person = require('./models/Person');
 const Temperature = require('./models/Temperature');
@@ -73,24 +76,6 @@ async function main() {
   consola.info('sylvesters: ', sylvesters);
   consola.info('temps: ', temps);
 }
-
-const typeDefs = gql`
-type Temperature {
-  datetime: Float
-  tempvalue: Float,
-  feelslike: Float,
-  dewpoint: Float
-}
-
-type Query {
-  temperature: [Temperature]
-}`;
-
-const resolvers = {
-  Query: {
-    temperature: () => Temperature.query(),
-  },
-};
 
 createSchemas()
   .then(() => main())
