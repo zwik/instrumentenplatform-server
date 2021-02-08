@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "apollo-server": "^2.19.2",
-    "consola": "^2.15.2",
+    "consola": "^2.15.3",
     "graphql": "^15.5.0",
     "knex": "^0.21.17",
     "mysql": "^2.18.1",
