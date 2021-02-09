@@ -1,0 +1,19 @@
+version: '3'
+
+services: 
+  db:
+    image: mysql:5.7.33
+    ports:
+      - 3306:3306
+    environment: 
+      MYSQL_RANDOM_ROOT_PASSWORD: absolutely
+      MYSQL_USER: marcel
+      MYSQL_PASSWORD: marcel
+    volumes: 
+      - ./database:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.0.4
+    ports: 
+      - 8081:80
+    links:
+      - db
