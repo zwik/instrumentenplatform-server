@@ -5,23 +5,16 @@ const Knex = require('knex');
 const { ApolloServer } = require('apollo-server');
 const consola = require('consola');
 
+const environment = process.env.ENVIRONMENT || 'development';
+const knexConfig = require('./knexfile')[environment];
+
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
 
 const Person = require('./models/Person');
 const Temperature = require('./models/Temperature');
 
-const knex = Knex({
-  client: 'mysql',
-  useNullAsDefault: true,
-  connection: {
-    host: process.env.DB_HOSTNAME,
-    user: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE,
-    insecureAuth: true,
-  },
-});
+const knex = Knex(knexConfig);
 
 Model.knex(knex);
 
