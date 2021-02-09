@@ -1,8 +1,9 @@
+require('dotenv').config();
+
 const { Model } = require('objection');
 const Knex = require('knex');
 const { ApolloServer } = require('apollo-server');
 const consola = require('consola');
-require('dotenv').config();
 
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
