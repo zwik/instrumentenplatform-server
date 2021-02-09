@@ -2,6 +2,7 @@ const { Model } = require('objection');
 const Knex = require('knex');
 const { ApolloServer } = require('apollo-server');
 const consola = require('consola');
+require('dotenv').config();
 
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
@@ -13,10 +14,10 @@ const knex = Knex({
   client: 'mysql',
   useNullAsDefault: true,
   connection: {
-    host: 'localhost',
-    user: 'marcel',
-    password: 'marcel',
-    database: 'objection',
+    host: process.env.DB_HOSTNAME,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
     insecureAuth: true,
   },
 });

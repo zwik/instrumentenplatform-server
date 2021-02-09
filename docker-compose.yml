@@ -7,8 +7,8 @@ services:
       - 3306:3306
     environment: 
       MYSQL_RANDOM_ROOT_PASSWORD: absolutely
-      MYSQL_USER: marcel
-      MYSQL_PASSWORD: marcel
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes: 
       - ./database:/var/lib/mysql
   phpmyadmin:
