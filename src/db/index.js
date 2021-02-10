@@ -7,18 +7,10 @@ const knexConfig = require('./knexfile')[environment];
 const knex = Knex(knexConfig);
 Model.knex(knex);
 
-const createSchemas = async () => {
-  if (await knex.schema.hasTable('temperature')) {
-    return;
-  }
+const temperatuur = require('./schemas/temperatuur');
 
-  await knex.schema.createTable('temperature', (table) => {
-    table.increments('id').primary();
-    table.dateTime('datetime').defaultTo(knex.fn.now()).notNullable();
-    table.double('tempvalue').notNullable();
-    table.double('feelslike').defaultTo(null);
-    table.double('dewpoint').notNullable();
-  });
+const createSchemas = async () => {
+  await temperatuur.createSchema(knex);
 };
 
 const destroy = () => {
