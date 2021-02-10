@@ -20,8 +20,7 @@
     "graphql": "^15.5.0",
     "knex": "^0.21.17",
     "mysql": "^2.18.1",
-    "objection": "^2.2.14",
-    "sqlite3": "^5.0.1"
+    "objection": "^2.2.14"
   },
   "devDependencies": {
     "eslint": "^7.19.0",
