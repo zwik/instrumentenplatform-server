@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "instrumentenplatform-server",
   "version": "1.0.0",
   "description": "Instrumentenplatform backend",
   "main": "src/index.js",
