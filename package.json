@@ -1,13 +1,13 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Instrumentenplatform backend",
+  "main": "src/index.js",
   "scripts": {
     "start": "nodemon src/index.js",
     "lint": "eslint src"
   },
-  "keywords": [],
+  "keywords": ["instrumentenplatform", "halley", "graphql", "apollo", "knex", "objection", "node", "nodejs"],
   "author": {
     "name": "Marcel van den Bosch",
     "email": "m.v.d.bosch@gmail.com"
