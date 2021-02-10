@@ -1,5 +1,3 @@
-const Temperature = require('../db/models/Temperature');
-
 module.exports = {
-  temperature: () => Temperature.query(),
+  temperature: (_parent, _args, { dataSources }) => dataSources.temperatureAPI.getAllTemperatures(),
 };

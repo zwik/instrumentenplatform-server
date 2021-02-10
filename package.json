@@ -7,13 +7,23 @@
     "start": "nodemon src/index.js",
     "lint": "eslint src"
   },
-  "keywords": ["instrumentenplatform", "halley", "graphql", "apollo", "knex", "objection", "node", "nodejs"],
+  "keywords": [
+    "instrumentenplatform",
+    "halley",
+    "graphql",
+    "apollo",
+    "knex",
+    "objection",
+    "node",
+    "nodejs"
+  ],
   "author": {
     "name": "Marcel van den Bosch",
     "email": "m.v.d.bosch@gmail.com"
   },
   "license": "MIT",
   "dependencies": {
+    "apollo-datasource": "^0.7.3",
     "apollo-server": "^2.19.2",
     "consola": "^2.15.3",
     "dotenv": "^8.2.0",
