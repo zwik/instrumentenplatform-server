@@ -4,13 +4,15 @@ const { ApolloServer } = require('apollo-server');
 const consola = require('consola');
 const { createSchemas, destroy } = require('./db');
 
-const TemperatureAPI = require('./datasources/temperatures');
+const AirAPI = require('./datasources/air');
+const TemperatureAPI = require('./datasources/temperature');
 
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
 
 const dataSources = () => ({
   temperatureAPI: new TemperatureAPI(),
+  airAPI: new AirAPI(),
 });
 
 createSchemas()
