@@ -5,7 +5,7 @@ const Air = require('../db/models/Air');
 class AirAPI extends DataSource {
   getAllAir() {
     this.allAir = Air.query()
-      .select('datetime', 'luchtvocht as humidity', 'luchtdruk as pressure', 'windspeed', 'hoogtebewolking as cloudheight', 'fijnstofmeting as particulatematter', 'windrichting as winddirection');
+      .select('datetime', 'luchtvocht AS humidity', 'luchtdruk AS pressure', 'windspeed', 'hoogtebewolking AS cloudheight', 'fijnstofmeting AS particulatematter', 'windrichting AS winddirection');
     return this.allAir;
   }
 }

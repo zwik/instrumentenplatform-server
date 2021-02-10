@@ -5,7 +5,7 @@ const Temperature = require('../db/models/Temperature');
 class TemperatureAPI extends DataSource {
   getAllTemperatures() {
     this.allTemperatures = Temperature.query()
-      .select('datetime', 'tempvalue', 'tempgevoel as feelslike', 'dauwpunt as dewpoint');
+      .select('datetime', 'tempvalue', 'tempgevoel AS feelslike', 'dauwpunt AS dewpoint');
     return this.allTemperatures;
   }
 }
