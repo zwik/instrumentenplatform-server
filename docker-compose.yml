@@ -9,6 +9,7 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: absolutely
       MYSQL_USER: ${DB_USERNAME}
       MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
     volumes: 
       - ./database:/var/lib/mysql
   phpmyadmin:
