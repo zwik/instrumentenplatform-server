@@ -13,7 +13,7 @@ services:
     volumes: 
       - ./database:/var/lib/mysql
   phpmyadmin:
-    image: phpmyadmin:5.0.4-apache
+    image: phpmyadmin:5.1.0-apache
     ports: 
       - 8081:80
     links:
