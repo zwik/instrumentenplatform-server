@@ -9,19 +9,24 @@ module.exports = gql`
   }
 
   type Temperature {
-    datetime: Float
+    datetime: Date!
     tempvalue: Float
+    intempvalue: Float
     feelslike: Float
     dewpoint: Float
   }
 
   type Air {
-    datetime: Float
+    datetime: Date!
     humidity: Float
     pressure: Float
     windspeed: Float
     cloudheight: Float
     particulatematter: Float
     winddirection: String
+  }
+
+  type Mutation {
+    insertInsideValues(datetime: Date!, temperature: Float, humidity: Float, pressure: Float): Boolean
   }
 `;

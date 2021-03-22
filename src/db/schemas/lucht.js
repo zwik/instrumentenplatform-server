@@ -6,8 +6,9 @@ const createSchema = async (knex) => {
   await knex.schema.createTable('lucht', (table) => {
     table.increments('id').primary();
     table.dateTime('datetime').defaultTo(knex.fn.now()).notNullable();
-    table.double('luchtvocht').notNullable();
-    table.double('luchtdruk').notNullable();
+    table.double('luchtvocht'); // .notNullable();
+    table.double('inluchtvocht');
+    table.double('luchtdruk');
     table.double('windspeed').defaultTo(null);
     table.double('hoogtebewolking').defaultTo(null);
     table.double('fijnstofmeting').defaultTo(null);

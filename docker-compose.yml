@@ -11,10 +11,36 @@ services:
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_DATABASE}
     volumes: 
-      - ./database:/var/lib/mysql
+      - dbdata:/var/lib/mysql
+    networks:
+      - instrumentenplatform
   phpmyadmin:
     image: phpmyadmin:5.1.0-apache
     ports: 
       - 8081:80
     links:
       - db
+    networks:
+      - instrumentenplatform
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: node
+    ports: 
+      - 4000:4000
+    working_dir: /home/node/app
+    expose: 
+      - 4000
+    depends_on: 
+      - db
+    command: "./wait-for-it.sh db:3306 -- npm run start"
+    networks:
+      - instrumentenplatform
+
+volumes:
+  dbdata:
+
+networks:
+  instrumentenplatform:
+    external: true

@@ -8,6 +8,15 @@ class AirAPI extends DataSource {
       .select('datetime', 'luchtvocht AS humidity', 'luchtdruk AS pressure', 'windspeed', 'hoogtebewolking AS cloudheight', 'fijnstofmeting AS particulatematter', 'windrichting AS winddirection');
     return this.allAir;
   }
+
+  async insertInsideHumidityAndPressure(datetime, humidity, pressure) {
+    this.insideHumidityAndPressure = await Air.query().insert({
+      datetime: new Date(datetime),
+      inluchtvocht: humidity,
+      luchtdruk: pressure,
+    });
+    return this.insideHumidityAndPressure;
+  }
 }
 
 module.exports = AirAPI;
