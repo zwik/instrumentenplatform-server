@@ -5,7 +5,9 @@ module.exports = gql`
 
   type Query {
     temperature: [Temperature]
+    temperatureRange(from: Date, to: Date): [Temperature]
     air: [Air]
+    airRange(from: Date, to: Date): [Air]
   }
 
   type Temperature {
