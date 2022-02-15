@@ -29,6 +29,7 @@ module.exports = gql`
   }
 
   type Mutation {
-    insertInsideValues(datetime: Date!, temperature: Float, humidity: Float, pressure: Float): Boolean
+    insertTemperatureValues(datetime: Date!, temperature: Float, insidetemperature: Float, dewpoint: Float, feelslike: Float): Boolean
+    insertAirValues(datetime: Date!, humidity: Float, insidehumidity: Float, pressure: Float, windspeed: Float, winddirection: Float): Boolean
   }
 `;

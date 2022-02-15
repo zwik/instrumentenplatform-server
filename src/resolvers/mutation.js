@@ -1,10 +1,21 @@
 module.exports = {
-  async insertInsideValues(_root, {
-    datetime, temperature, humidity, pressure,
+  async insertTemperatureValues(_root, {
+    datetime, temperature, insidetemperature, dewpoint, feelslike,
   }, { dataSources }) {
     try {
-      dataSources.temperatureAPI.insertInsideTemperature(datetime, temperature);
-      dataSources.airAPI.insertInsideHumidityAndPressure(datetime, humidity, pressure);
+      dataSources.temperatureAPI
+        .insertTemperature(datetime, temperature, insidetemperature, dewpoint, feelslike);
+      return true;
+    } catch (err) {
+      return false;
+    }
+  },
+  async insertAirValues(_root, {
+    datetime, humidity, insidehumidity, pressure, windspeed, winddirection,
+  }, { dataSources }) {
+    try {
+      dataSources.airAPI
+        .insertAir(datetime, humidity, insidehumidity, pressure, windspeed, winddirection);
       return true;
     } catch (err) {
       return false;

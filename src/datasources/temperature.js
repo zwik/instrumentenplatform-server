@@ -16,12 +16,14 @@ class TemperatureAPI extends DataSource {
     return this.temperatureRange;
   }
 
-  async insertInsideTemperature(datetime, temperature) {
-    this.insideTemperature = await Temperature.query().insert({
-      datetime: new Date(datetime),
-      intempvalue: temperature,
+  async insertTemperature(datetime, temperature, inTemperature, dewpoint, feelsLike) {
+    this.temperature = await Temperature.query().insert({
+      dateTime: new Date(datetime),
+      tempvalue: temperature,
+      intempvalue: inTemperature,
+      dauwpunt: dewpoint,
+      tempgevoel: feelsLike,
     });
-    return this.insideTemperature;
   }
 }
 

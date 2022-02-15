@@ -6,10 +6,10 @@ const createSchema = async (knex) => {
   await knex.schema.createTable('temperatuur', (table) => {
     table.increments('id').primary();
     table.dateTime('datetime').defaultTo(knex.fn.now()).notNullable();
-    table.double('tempvalue'); // .notNullable();
+    table.double('tempvalue');
     table.double('intempvalue');
-    table.double('tempgevoel').defaultTo(null);
-    table.double('dauwpunt'); // .notNullable();
+    table.double('tempgevoel');
+    table.double('dauwpunt');
   });
 };
 
