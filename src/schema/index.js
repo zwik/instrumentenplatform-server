@@ -12,8 +12,8 @@ module.exports = gql`
 
   type Temperature {
     datetime: Date!
-    tempvalue: Float
-    intempvalue: Float
+    temperature: Float
+    insidetemperature: Float
     feelslike: Float
     dewpoint: Float
   }
