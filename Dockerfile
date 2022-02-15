@@ -11,7 +11,4 @@ RUN npm install
 COPY src .
 COPY .env .
 
-# Add wait-for-it
-COPY wait-for-it.sh .
-
 EXPOSE 4000 
