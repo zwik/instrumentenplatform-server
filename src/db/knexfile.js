@@ -9,5 +9,6 @@ module.exports = {
       database: process.env.DB_DATABASE,
       insecureAuth: true,
     },
+    pool: { min: 0, max: 7 },
   },
 };
