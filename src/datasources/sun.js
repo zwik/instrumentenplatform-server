@@ -19,7 +19,7 @@ class SunAPI extends DataSource {
   async insertSun(datetime, radiation, uvindex) {
     this.sun = await Sun.query().insert({
       datetime: new Date(datetime),
-      radiate: radiation,
+      radiatie: radiation,
       uvindex,
     });
     return this.sun;

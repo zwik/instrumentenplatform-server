@@ -39,8 +39,8 @@ module.exports = {
     datetime, radiation, uvindex,
   }, { dataSources }) {
     try {
-      dataSources.rainAPI
-        .insertRain(datetime, radiation, uvindex);
+      dataSources.sunAPI
+        .insertSun(datetime, radiation, uvindex);
       return true;
     } catch (err) {
       return false;

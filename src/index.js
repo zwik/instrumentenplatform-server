@@ -15,7 +15,7 @@ const resolvers = require('./resolvers');
 const dataSources = () => ({
   airAPI: new AirAPI(),
   rainAPI: new RainAPI(),
-  sunApi: new SunAPI(),
+  sunAPI: new SunAPI(),
   temperatureAPI: new TemperatureAPI(),
 });
 
