@@ -6,7 +6,7 @@ const createSchema = async (knex) => {
   await knex.schema.createTable('neerslag', (table) => {
     table.increments('id').primary();
     table.dateTime('datetime').defaultTo(knex.fn.now()).notNullable();
-    table.double('neerslagvalue').notNullable();
+    table.double('neerslagvalue');
   });
 };
 
