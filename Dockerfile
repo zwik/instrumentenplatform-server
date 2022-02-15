@@ -1,17 +1,17 @@
-FROM node:14.16.0
+FROM node:16.14.0
 
 # Create app directory
 WORKDIR /home/node/app
 
 # Install app dependencies
-COPY package*.json ./
+COPY package*.json .
 RUN npm install
 
 # Bundle app source
-COPY src ./
-COPY .env ./
+COPY src .
+COPY .env .
 
 # Add wait-for-it
-COPY wait-for-it.sh ./
+COPY wait-for-it.sh .
 
 EXPOSE 4000 
