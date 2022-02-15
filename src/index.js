@@ -6,6 +6,7 @@ const { createSchemas, destroy } = require('./db');
 
 const AirAPI = require('./datasources/air');
 const RainAPI = require('./datasources/rain');
+const SunAPI = require('./datasources/sun');
 const TemperatureAPI = require('./datasources/temperature');
 
 const typeDefs = require('./schema');
@@ -14,6 +15,7 @@ const resolvers = require('./resolvers');
 const dataSources = () => ({
   airAPI: new AirAPI(),
   rainAPI: new RainAPI(),
+  sunApi: new SunAPI(),
   temperatureAPI: new TemperatureAPI(),
 });
 

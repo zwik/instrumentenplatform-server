@@ -10,6 +10,7 @@ module.exports = {
       return false;
     }
   },
+
   async insertAirValues(_root, {
     datetime, humidity, insidehumidity, pressure, windspeed, winddirection,
   }, { dataSources }) {
@@ -21,12 +22,25 @@ module.exports = {
       return false;
     }
   },
+
   async insertRainValues(_root, {
     datetime, rate,
   }, { dataSources }) {
     try {
       dataSources.rainAPI
         .insertRain(datetime, rate);
+      return true;
+    } catch (err) {
+      return false;
+    }
+  },
+
+  async insertSunValues(_root, {
+    datetime, radiation, uvindex,
+  }, { dataSources }) {
+    try {
+      dataSources.rainAPI
+        .insertRain(datetime, radiation, uvindex);
       return true;
     } catch (err) {
       return false;

@@ -6,8 +6,8 @@ const createSchema = async (knex) => {
   await knex.schema.createTable('zonnehelderheid', (table) => {
     table.increments('id').primary();
     table.dateTime('datetime').defaultTo(knex.fn.now()).notNullable();
-    table.double('zonvalue').notNullable();
-    table.double('zonhelderheid').notNullable();
+    table.double('radiatie');
+    table.double('uvindex');
   });
 };
 
