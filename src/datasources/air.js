@@ -17,7 +17,7 @@ class AirAPI extends DataSource {
   }
 
   async insertAir(datetime, humidity, inHumidity, pressure, windspeed, windDirection) {
-    this.insideHumidityAndPressure = await Air.query().insert({
+    this.air = await Air.query().insert({
       datetime: new Date(datetime),
       luchtvocht: humidity,
       inluchtvocht: inHumidity,
@@ -25,7 +25,7 @@ class AirAPI extends DataSource {
       windspeed,
       windrichting: windDirection,
     });
-    return this.insideHumidityAndPressure;
+    return this.air;
   }
 }
 

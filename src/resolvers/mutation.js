@@ -21,4 +21,15 @@ module.exports = {
       return false;
     }
   },
+  async insertRainValues(_root, {
+    datetime, rate,
+  }, { dataSources }) {
+    try {
+      dataSources.rainAPI
+        .insertRain(datetime, rate);
+      return true;
+    } catch (err) {
+      return false;
+    }
+  },
 };

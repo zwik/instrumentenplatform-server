@@ -8,6 +8,8 @@ module.exports = gql`
     temperatureRange(from: Date, to: Date): [Temperature]
     air: [Air]
     airRange(from: Date, to: Date): [Air]
+    rain: [Rain]
+    rainRange(from: Date, to: Date): [Rain]
   }
 
   type Temperature {
@@ -26,6 +28,11 @@ module.exports = gql`
     cloudheight: Float
     particulatematter: Float
     winddirection: String
+  }
+
+  type Rain {
+    datetime: Date!
+    rate: Float
   }
 
   type Mutation {
