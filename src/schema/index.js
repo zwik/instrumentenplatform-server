@@ -17,6 +17,7 @@ module.exports = gql`
   type Air {
     datetime: Date!
     humidity: Float
+    insidehumidity: Float
     pressure: Float
     windspeed: Float
     cloudheight: Float

@@ -5,13 +5,13 @@ const Air = require('../db/models/Air');
 class AirAPI extends DataSource {
   async getAllAir() {
     this.allAir = await Air.query()
-      .select('datetime', 'luchtvocht AS humidity', 'luchtdruk AS pressure', 'windspeed', 'hoogtebewolking AS cloudheight', 'fijnstofmeting AS particulatematter', 'windrichting AS winddirection');
+      .select('datetime', 'luchtvocht AS humidity', 'inluchtvocht as insidehumidity', 'luchtdruk AS pressure', 'windspeed', 'hoogtebewolking AS cloudheight', 'fijnstofmeting AS particulatematter', 'windrichting AS winddirection');
     return this.allAir;
   }
 
   async getAirRange(from, to) {
     this.airRange = await Air.query()
-      .select('datetime', 'luchtvocht AS humidity', 'luchtdruk AS pressure', 'windspeed', 'hoogtebewolking AS cloudheight', 'fijnstofmeting AS particulatematter', 'windrichting AS winddirection')
+      .select('datetime', 'luchtvocht AS humidity', 'inluchtvocht as insidehumidity', 'luchtdruk AS pressure', 'windspeed', 'hoogtebewolking AS cloudheight', 'fijnstofmeting AS particulatematter', 'windrichting AS winddirection')
       .whereBetween('datetime', [new Date(from), new Date(to)]);
     return this.airRange;
   }
