@@ -34,7 +34,7 @@ services:
     restart: always
     ports: 
       - 4000:4000
-    working_dir: /home/node/app
+    working_dir: /home/node
     expose: 
       - 4000
     depends_on: 
