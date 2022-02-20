@@ -3,7 +3,7 @@ FROM node:16.14.0
 # Do not use root
 USER node
 
-# Create app directory
+# Use the node user's home directory
 WORKDIR /home/node
 
 # Install app dependencies
