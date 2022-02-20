@@ -16,6 +16,14 @@ class SunAPI extends DataSource {
     return this.sunRange;
   }
 
+  async getSunRangeInterval(from, to, interval) {
+    this.sunRangeInterval = await Sun.query()
+      .select('datetime', 'radiatie AS radiation', 'uvindex')
+      .whereBetween('datetime', [new Date(from), new Date(to)])
+      .where(`MOD(MINUTE(datetime), ${interval}) = 0`);
+    return this.sunRangeInterval;
+  }
+
   async insertSun(datetime, radiation, uvindex) {
     this.sun = await Sun.query().insert({
       datetime: new Date(datetime),

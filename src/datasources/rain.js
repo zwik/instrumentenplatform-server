@@ -16,6 +16,14 @@ class RainAPI extends DataSource {
     return this.rainRange;
   }
 
+  async getRainRangeInterval(from, to, interval) {
+    this.rainRangeInterval = await Rain.query()
+      .select('datetime', 'neerslagvalue AS rate')
+      .whereBetween('datetime', [new Date(from), new Date(to)])
+      .where(`MOD(MINUTE(datetime), ${interval}) = 0`);
+    return this.rainRangeInterval;
+  }
+
   async insertRain(datetime, rate) {
     this.rain = await Rain.query().insert({
       datetime: new Date(datetime),

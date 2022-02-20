@@ -6,12 +6,16 @@ module.exports = gql`
   type Query {
     air: [Air]
     airRange(from: Date, to: Date): [Air]
+    airRangeInterval(from: Date, to: Date, interval: Int): [Air]
     rain: [Rain]
     rainRange(from: Date, to: Date): [Rain]
+    rainRangeInterval(from: Date, to: Date, interval: Int): [Rain]
     sun: [Sun]
     sunRange(from: Date, to: Date): [Sun]
+    sunRangeInterval(from: Date, to: Date, interval: Int): [Sun]
     temperature: [Temperature]
     temperatureRange(from: Date, to: Date): [Temperature]
+    temperatureRangeInterval(from: Date, to: Date, interval: Int): [Temperature]
   }
 
   type Air {
