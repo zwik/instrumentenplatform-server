@@ -20,7 +20,7 @@ class RainAPI extends DataSource {
     this.rainRangeInterval = await Rain.query()
       .select('datetime', 'neerslagvalue AS rate')
       .whereBetween('datetime', [new Date(from), new Date(to)])
-      .where(`MOD(MINUTE(datetime), ${interval}) = 0`);
+      .andWhereRaw(`MOD(MINUTE(datetime), ${interval}) = 0`);
     return this.rainRangeInterval;
   }
 

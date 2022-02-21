@@ -20,7 +20,7 @@ class SunAPI extends DataSource {
     this.sunRangeInterval = await Sun.query()
       .select('datetime', 'radiatie AS radiation', 'uvindex')
       .whereBetween('datetime', [new Date(from), new Date(to)])
-      .where(`MOD(MINUTE(datetime), ${interval}) = 0`);
+      .andWhereRaw(`MOD(MINUTE(datetime), ${interval}) = 0`);
     return this.sunRangeInterval;
   }
 

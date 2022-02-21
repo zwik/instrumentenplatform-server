@@ -20,7 +20,7 @@ class TemperatureAPI extends DataSource {
     this.temperatureRangeInterval = await Temperature.query()
       .select('datetime', 'tempvalue AS temperature', 'intempvalue AS insidetemperature', 'tempgevoel AS feelslike', 'dauwpunt AS dewpoint')
       .whereBetween('datetime', [new Date(from), new Date(to)])
-      .where(`MOD(MINUTE(datetime), ${interval}) = 0`);
+      .andWhereRaw(`MOD(MINUTE(datetime), ${interval}) = 0`);
     return this.temperatureRangeInterval;
   }
 

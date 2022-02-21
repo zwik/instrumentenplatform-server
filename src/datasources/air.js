@@ -20,7 +20,7 @@ class AirAPI extends DataSource {
     this.airRangeInterval = await Air.query()
       .select('datetime', 'luchtvocht AS humidity', 'inluchtvocht as insidehumidity', 'luchtdruk AS pressure', 'windspeed', 'hoogtebewolking AS cloudheight', 'fijnstofmeting AS particulatematter', 'windrichting AS winddirection')
       .whereBetween('datetime', [new Date(from), new Date(to)])
-      .where(`MOD(MINUTE(datetime), ${interval}) = 0`);
+      .andWhereRaw(`MOD(MINUTE(datetime), ${interval}) = 0`);
     return this.airRangeInterval;
   }
 
