@@ -27,7 +27,7 @@
     "apollo-server": "^3.6.7",
     "consola": "^2.15.3",
     "dotenv": "^16.0.0",
-    "graphql": "^16.3.0",
+    "graphql": "^16.4.0",
     "knex": "^2.0.0",
     "mysql": "^2.18.1",
     "objection": "^3.0.1"
