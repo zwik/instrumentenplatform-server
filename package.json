@@ -30,7 +30,7 @@
     "graphql": "^16.14.2",
     "knex": "^3.3.0",
     "mysql": "^2.18.1",
-    "objection": "^3.9.1"
+    "objection": "^4.0.0"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
